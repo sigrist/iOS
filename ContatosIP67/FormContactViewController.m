@@ -147,6 +147,7 @@
     
     // Get the image from the dictionary and set in the photoBtn in the state normal
     UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+    
     [self.photoBtn setBackgroundImage:image forState:UIControlStateNormal];
     [self.photoBtn setTitle:nil forState:UIControlStateNormal];
     

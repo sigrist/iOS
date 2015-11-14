@@ -27,6 +27,7 @@
 @property Contact *contact;
 @property (weak) id<FormContactViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *photoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *gpsBtn;
 
 - (IBAction)selectPhoto;
 
