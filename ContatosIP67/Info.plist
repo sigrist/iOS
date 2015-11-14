@@ -36,5 +36,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <!-- GPS Support -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Use location?</string>
+
 </dict>
 </plist>

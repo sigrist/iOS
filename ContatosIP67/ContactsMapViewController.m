@@ -24,13 +24,22 @@
         UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Map" image:icon tag:0];
         self.tabBarItem = tabItem;
 
+        // Set the title
+        self.navigationItem.title = @"VNT Contacts";
+
     }
     
     return self;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    MKUserTrackingBarButtonItem *userTrackingButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
+    self.navigationItem.rightBarButtonItem = userTrackingButton;
+
+    self.manager = [CLLocationManager new];
+    [self.manager requestWhenInUseAuthorization];
+
 }
 
 - (void)didReceiveMemoryWarning {

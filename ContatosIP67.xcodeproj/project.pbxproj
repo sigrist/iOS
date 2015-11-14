@@ -22,6 +22,7 @@
 		3209984B1BF7716A0043C9A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209984A1BF7716A0043C9A1 /* MapKit.framework */; };
 		320998541BF773800043C9A1 /* ContactsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 320998521BF773800043C9A1 /* ContactsMapViewController.m */; };
 		320998551BF773800043C9A1 /* ContactsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320998531BF773800043C9A1 /* ContactsMapViewController.xib */; };
+		320998571BF79C9A0043C9A1 /* VilaMariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 320998561BF79C9A0043C9A1 /* VilaMariana.gpx */; };
 		32BB79961BEE462F00AD84B2 /* ActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB79951BEE462F00AD84B2 /* ActionManager.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		320998511BF773800043C9A1 /* ContactsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsMapViewController.h; sourceTree = "<group>"; };
 		320998521BF773800043C9A1 /* ContactsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsMapViewController.m; sourceTree = "<group>"; };
 		320998531BF773800043C9A1 /* ContactsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsMapViewController.xib; sourceTree = "<group>"; };
+		320998561BF79C9A0043C9A1 /* VilaMariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = VilaMariana.gpx; sourceTree = "<group>"; };
 		32BB79941BEE462F00AD84B2 /* ActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionManager.h; sourceTree = "<group>"; };
 		32BB79951BEE462F00AD84B2 /* ActionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				320998511BF773800043C9A1 /* ContactsMapViewController.h */,
 				320998521BF773800043C9A1 /* ContactsMapViewController.m */,
 				320998531BF773800043C9A1 /* ContactsMapViewController.xib */,
+				320998561BF79C9A0043C9A1 /* VilaMariana.gpx */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			files = (
 				3207A38C1BDBAACC007CE339 /* LaunchScreen.storyboard in Resources */,
 				3207A3891BDBAACC007CE339 /* Assets.xcassets in Resources */,
+				320998571BF79C9A0043C9A1 /* VilaMariana.gpx in Resources */,
 				320998551BF773800043C9A1 /* ContactsMapViewController.xib in Resources */,
 				3207A3841BDBAACC007CE339 /* Main.storyboard in Resources */,
 			);

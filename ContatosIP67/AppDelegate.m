@@ -26,10 +26,12 @@
     
     // And the ContactsMapViewController as second screen
     ContactsMapViewController *map = [ContactsMapViewController new];
+    // Create the Navigation Controller
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:map];
     
     // Create the tab bar with the two screens
     UITabBarController *tabBarController = [UITabBarController new];
-    tabBarController.viewControllers = @[nav, map];
+    tabBarController.viewControllers = @[nav, nav2];
 
     
     // Set the tab bar controller as the root view controller

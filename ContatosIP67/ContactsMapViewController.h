@@ -10,5 +10,6 @@
 #import <MapKit/MapKit.h>
 
 @interface ContactsMapViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong)CLLocationManager *manager;
 @end
