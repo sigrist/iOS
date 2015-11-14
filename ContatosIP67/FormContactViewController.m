@@ -27,6 +27,8 @@
         self.textFieldSite.text = self.contact.site;
         self.textFieldAddress.text = self.contact.address;
         self.textFieldPhone.text = self.contact.phone;
+        self.textFieldLatitude.text = [self.contact.latitude stringValue];
+        self.textFieldLongitude.text = [self.contact.longitude stringValue];
         
         if (self.contact.photo) {
             [self.photoBtn setBackgroundImage:self.contact.photo forState:UIControlStateNormal];
@@ -113,14 +115,18 @@
     self.contact.site = site;
     self.contact.address =address;
     self.contact.phone = phone;
+    self.contact.latitude = [NSNumber numberWithFloat:[self.textFieldLatitude.text floatValue]];
+    self.contact.longitude = [NSNumber numberWithFloat:[self.textFieldLongitude.text floatValue]];
     
     if (image) {
         self.contact.photo = image;
     }
+}
+
+-(IBAction)searchCoordinates:(id)sender {
 
     
 }
-
 - (IBAction)selectPhoto {
     /// Check if there is access to the camera before call
     

@@ -114,6 +114,8 @@
                         <outlet property="photoBtn" destination="ZOh-fz-rNs" id="5gX-U0-MjL"/>
                         <outlet property="textFieldAddress" destination="adZ-sI-V3a" id="TFP-It-wzh"/>
                         <outlet property="textFieldEmail" destination="Mxb-o6-hNH" id="mMu-AU-WY5"/>
+                        <outlet property="textFieldLatitude" destination="GRu-yc-IdZ" id="cpN-3x-AEk"/>
+                        <outlet property="textFieldLongitude" destination="bwd-gR-W5v" id="AXq-nd-Hgc"/>
                         <outlet property="textFieldName" destination="kby-T0-j24" id="iJm-Q5-hxO"/>
                         <outlet property="textFieldPhone" destination="yOj-s2-vW4" id="TXh-L5-V8O"/>
                         <outlet property="textFieldSite" destination="Tlz-hl-LRh" id="hte-Aj-hwt"/>

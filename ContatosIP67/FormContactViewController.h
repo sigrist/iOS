@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "Contact.h"
 #import "ContactDao.h"
 
@@ -24,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldSite;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldAddress;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPhone;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldLatitude;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldLongitude;
+
 @property Contact *contact;
 @property (weak) id<FormContactViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *photoBtn;
