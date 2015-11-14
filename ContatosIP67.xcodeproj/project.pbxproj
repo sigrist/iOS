@@ -19,6 +19,9 @@
 		3207A3BC1BDBE80C007CE339 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BB1BDBE80C007CE339 /* Contact.m */; };
 		3207A3BF1BDBF136007CE339 /* ContactDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3BE1BDBF136007CE339 /* ContactDao.m */; };
 		3207A3C51BDC080C007CE339 /* ContactsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207A3C41BDC080C007CE339 /* ContactsListViewController.m */; };
+		3209984B1BF7716A0043C9A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209984A1BF7716A0043C9A1 /* MapKit.framework */; };
+		320998541BF773800043C9A1 /* ContactsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 320998521BF773800043C9A1 /* ContactsMapViewController.m */; };
+		320998551BF773800043C9A1 /* ContactsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320998531BF773800043C9A1 /* ContactsMapViewController.xib */; };
 		32BB79961BEE462F00AD84B2 /* ActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB79951BEE462F00AD84B2 /* ActionManager.m */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,10 @@
 		3207A3BE1BDBF136007CE339 /* ContactDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDao.m; sourceTree = "<group>"; };
 		3207A3C31BDC080C007CE339 /* ContactsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsListViewController.h; sourceTree = "<group>"; };
 		3207A3C41BDC080C007CE339 /* ContactsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsListViewController.m; sourceTree = "<group>"; };
+		3209984A1BF7716A0043C9A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		320998511BF773800043C9A1 /* ContactsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsMapViewController.h; sourceTree = "<group>"; };
+		320998521BF773800043C9A1 /* ContactsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsMapViewController.m; sourceTree = "<group>"; };
+		320998531BF773800043C9A1 /* ContactsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsMapViewController.xib; sourceTree = "<group>"; };
 		32BB79941BEE462F00AD84B2 /* ActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionManager.h; sourceTree = "<group>"; };
 		32BB79951BEE462F00AD84B2 /* ActionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3209984B1BF7716A0043C9A1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,7 @@
 		3207A36D1BDBAACC007CE339 = {
 			isa = PBXGroup;
 			children = (
+				3209984A1BF7716A0043C9A1 /* MapKit.framework */,
 				3207A3781BDBAACC007CE339 /* ContatosIP67 */,
 				3207A3951BDBAACC007CE339 /* ContatosIP67Tests */,
 				3207A3A01BDBAACC007CE339 /* ContatosIP67UITests */,
@@ -133,6 +142,9 @@
 				3207A3C41BDC080C007CE339 /* ContactsListViewController.m */,
 				32BB79941BEE462F00AD84B2 /* ActionManager.h */,
 				32BB79951BEE462F00AD84B2 /* ActionManager.m */,
+				320998511BF773800043C9A1 /* ContactsMapViewController.h */,
+				320998521BF773800043C9A1 /* ContactsMapViewController.m */,
+				320998531BF773800043C9A1 /* ContactsMapViewController.xib */,
 			);
 			path = ContatosIP67;
 			sourceTree = "<group>";
@@ -269,6 +281,7 @@
 			files = (
 				3207A38C1BDBAACC007CE339 /* LaunchScreen.storyboard in Resources */,
 				3207A3891BDBAACC007CE339 /* Assets.xcassets in Resources */,
+				320998551BF773800043C9A1 /* ContactsMapViewController.xib in Resources */,
 				3207A3841BDBAACC007CE339 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +314,7 @@
 				3207A3BF1BDBF136007CE339 /* ContactDao.m in Sources */,
 				3207A3BC1BDBE80C007CE339 /* Contact.m in Sources */,
 				3207A37B1BDBAACC007CE339 /* main.m in Sources */,
+				320998541BF773800043C9A1 /* ContactsMapViewController.m in Sources */,
 				3207A3C51BDC080C007CE339 /* ContactsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

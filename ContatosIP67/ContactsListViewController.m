@@ -20,6 +20,11 @@ static NSString *CONTAC_CELL = @"contactCell";
 -(id) init {
     self = [super init];
     if (self) {
+        // Setup the View Icon
+        UIImage *icon = [UIImage imageNamed:@"lista-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Contacts" image:icon tag:0];
+        self.tabBarItem = tabItem;
+        
         // Create the addButton, calling self the method showFormContacView
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd) target:self action:@selector(showFormContactView)];
 

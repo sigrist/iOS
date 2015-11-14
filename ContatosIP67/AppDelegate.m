@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ContactsListViewController.h"
+#import "ContactsMapViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,12 +20,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // We want to use ContactsListViewController as main screen
     ContactsListViewController *list = [ContactsListViewController new];
-    
     // Create the Navigation Controller
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:list];
 
-    // Set the navigation controller as the root view controller
-    self.window.rootViewController = nav;
+    
+    // And the ContactsMapViewController as second screen
+    ContactsMapViewController *map = [ContactsMapViewController new];
+    
+    // Create the tab bar with the two screens
+    UITabBarController *tabBarController = [UITabBarController new];
+    tabBarController.viewControllers = @[nav, map];
+
+    
+    // Set the tab bar controller as the root view controller
+    self.window.rootViewController = tabBarController;
 
     // Override point for customization after application launch.
     return YES;
