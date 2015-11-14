@@ -124,7 +124,7 @@
 - (IBAction)selectPhoto {
     /// Check if there is access to the camera before call
     
-    if(!UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Choose photo" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take picture", @"From library", nil];
         
         [sheet showInView:self.view];
