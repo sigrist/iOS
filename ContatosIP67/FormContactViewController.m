@@ -112,7 +112,34 @@
 }
 
 - (IBAction)selectPhoto {
-    NSLog(@"Clicked photo button");
+    /// Check if there is access to the camera before call
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        NSLog(@"TEnho camera");
+    } else {
+        UIImagePickerController *picker = [UIImagePickerController new];
+        // Get the photos from photo library
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        // Allow editing
+        picker.allowsEditing = YES;
+        // What to do with the photo?
+        picker.delegate = self; 
+        
+        
+        // Show
+        [self presentViewController: picker animated:YES completion: nil];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image from the dictionary and set in the photoBtn in the state normal
+    UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+    [self.photoBtn setBackgroundImage:image forState:UIControlStateNormal];
+    [self.photoBtn setTitle:nil forState:UIControlStateNormal];
+    
+    // Remove the picker controller from screen
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
