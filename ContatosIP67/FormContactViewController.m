@@ -27,6 +27,11 @@
         self.textFieldSite.text = self.contact.site;
         self.textFieldAddress.text = self.contact.address;
         self.textFieldPhone.text = self.contact.phone;
+        
+        if (self.contact.photo) {
+            [self.photoBtn setBackgroundImage:self.contact.photo forState:UIControlStateNormal];
+            [self.photoBtn setTitle:nil forState:UIControlStateNormal];
+        }
 
         // Create the addButton, calling self the method showFormContacView
         saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateContact)];
@@ -100,6 +105,7 @@
     NSString *site = self.textFieldSite.text;
     NSString *address = self.textFieldAddress.text;
     NSString *phone = self.textFieldPhone.text;
+    UIImage *image = [self.photoBtn backgroundImageForState:UIControlStateNormal];
     
     // Create the contact object and set the values
     self.contact.name = name;
@@ -107,6 +113,10 @@
     self.contact.site = site;
     self.contact.address =address;
     self.contact.phone = phone;
+    
+    if (image) {
+        self.contact.photo = image;
+    }
 
     
 }
@@ -114,8 +124,10 @@
 - (IBAction)selectPhoto {
     /// Check if there is access to the camera before call
     
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        NSLog(@"TEnho camera");
+    if(!UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Choose photo" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take picture", @"From library", nil];
+        
+        [sheet showInView:self.view];
     } else {
         UIImagePickerController *picker = [UIImagePickerController new];
         // Get the photos from photo library
@@ -142,4 +154,24 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    UIImagePickerController *picker = [UIImagePickerController new];
+    // Allow editing
+    picker.allowsEditing = YES;
+    // What to do with the photo?
+    picker.delegate = self;
+    
+    switch (buttonIndex) {
+        case 0: {
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }; break;
+        case 1: {
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }; break;
+        default: return;
+    }
+    // Show
+    [self presentViewController: picker animated:YES completion: nil];
+    
+}
 @end

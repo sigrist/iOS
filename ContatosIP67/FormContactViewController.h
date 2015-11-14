@@ -17,7 +17,7 @@
 
 @end
 
-@interface FormContactViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface FormContactViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldEmail;
