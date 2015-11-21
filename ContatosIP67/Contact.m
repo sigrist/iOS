@@ -14,4 +14,9 @@
     return [NSString stringWithFormat: @"%@ <%@>", self.name, self.email ];
 }
 
+// Return the  lat and long as CLLocationCoordinate2D to show in the map
+- (CLLocationCoordinate2D)coordinate {
+    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
+}
+
 @end

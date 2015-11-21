@@ -27,6 +27,8 @@
         // Set the title
         self.navigationItem.title = @"VNT Contacts";
 
+        ContactDao *dao = [ContactDao contactDaoInstance];
+        self.contacts = dao.contacts;
     }
     
     return self;
@@ -47,6 +49,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.mapView addAnnotations:self.contacts];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [self.mapView removeAnnotations:self.contacts];
+}
 /*
 #pragma mark - Navigation
 
