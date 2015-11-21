@@ -78,7 +78,7 @@
     
     // Setup the pin
     Contact *contact = (Contact *)annotation;
-    pin.pinColor = MKPinAnnotationColorRed;
+    pin.pinTintColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     pin.canShowCallout = YES;
     
     // IF there is photo, put it
