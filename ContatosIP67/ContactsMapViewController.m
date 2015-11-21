@@ -58,6 +58,7 @@
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    // If is the user location pin, return nil
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;
     }
@@ -80,7 +81,7 @@
     pin.pinColor = MKPinAnnotationColorRed;
     pin.canShowCallout = YES;
     
-    // IF there is photo, put it 
+    // IF there is photo, put it
     if (contact.photo) {
         UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 32.0, 32.0)];
         image.image = contact.photo;
