@@ -96,6 +96,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9H-eL-rJL">
                                 <rect key="frame" x="251" y="230" width="30" height="30"/>
                                 <state key="normal" image="gps"/>
+                                <connections>
+                                    <action selector="searchCoordinates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MTc-mE-ORG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOh-fz-rNs">
                                 <rect key="frame" x="232" y="96" width="68" height="63"/>
@@ -104,6 +107,9 @@
                                     <action selector="selectPhoto" destination="BYZ-38-t0r" eventType="touchUpInside" id="flb-VE-GBH"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CuZ-kM-1D0">
+                                <rect key="frame" x="256" y="235" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -111,6 +117,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="gpsBtn" destination="J9H-eL-rJL" id="Uvi-sI-DFC"/>
+                        <outlet property="loadingGps" destination="CuZ-kM-1D0" id="BYV-lD-wnD"/>
                         <outlet property="photoBtn" destination="ZOh-fz-rNs" id="5gX-U0-MjL"/>
                         <outlet property="textFieldAddress" destination="adZ-sI-V3a" id="TFP-It-wzh"/>
                         <outlet property="textFieldEmail" destination="Mxb-o6-hNH" id="mMu-AU-WY5"/>

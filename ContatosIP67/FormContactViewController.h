@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPhone;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldLatitude;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldLongitude;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingGps;
 
 @property Contact *contact;
 @property (weak) id<FormContactViewControllerDelegate> delegate;

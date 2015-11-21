@@ -124,8 +124,31 @@
 }
 
 -(IBAction)searchCoordinates:(id)sender {
-
+    // Start the animation
+    [self.loadingGps startAnimating];
+    // Hide the button
+    self.gpsBtn.hidden = YES;
     
+    // Create the geocoder
+    CLGeocoder *geocoder = [CLGeocoder new];
+    [geocoder geocodeAddressString: self.textFieldAddress.text completionHandler:^(NSArray *results, NSError *error) {
+        // if there is no error
+        if (error == nil && [results count] > 0) {
+            // Get the results
+            CLPlacemark *result = results[0];
+            // Get the coordinate
+            CLLocationCoordinate2D coordinate = result.location.coordinate;
+            
+            // Set the values in the text fields
+            self.textFieldLatitude.text = [NSString stringWithFormat:@"%f", coordinate.latitude];
+            self.textFieldLongitude.text = [NSString stringWithFormat:@"%f", coordinate.longitude];
+        }
+        // Stop the animation
+        [self.loadingGps stopAnimating];
+        // Show the button
+        self.gpsBtn.hidden = NO;
+
+    }];
 }
 - (IBAction)selectPhoto {
     /// Check if there is access to the camera before call
