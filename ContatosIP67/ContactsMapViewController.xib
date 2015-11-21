@@ -18,9 +18,27 @@
                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kMZ-fR-v1b">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="602"/>
                     <subviews>
-                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3SR-A2-KF0">
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bei-L6-8H2">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="602"/>
-                        </mapView>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rIl-Zw-ZWZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="602"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Gj-Ql-mGi">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="602"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3SR-A2-KF0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="602"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="ljo-25-huI"/>
+                                                    </connections>
+                                                </mapView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
                     </subviews>
                 </stackView>
             </subviews>

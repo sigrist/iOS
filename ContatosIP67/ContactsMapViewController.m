@@ -56,6 +56,39 @@
 -(void)viewWillDisappear:(BOOL)animated {
     [self.mapView removeAnnotations:self.contacts];
 }
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    // An identifier to reuse the pin
+    static NSString *identifier = @"pin";
+    
+    // Get the reusable pin
+    MKPinAnnotationView *pin = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    // IF there is no pin, create
+    if (!pin) {
+        pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    } else {
+        pin.annotation = annotation;
+    }
+    
+    // Setup the pin
+    Contact *contact = (Contact *)annotation;
+    pin.pinColor = MKPinAnnotationColorRed;
+    pin.canShowCallout = YES;
+    
+    // IF there is photo, put it 
+    if (contact.photo) {
+        UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 32.0, 32.0)];
+        image.image = contact.photo;
+        pin.leftCalloutAccessoryView = image;
+    }
+    
+    return pin;
+}
 /*
 #pragma mark - Navigation
 
