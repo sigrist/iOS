@@ -9,12 +9,12 @@
 
 
 #import <UIKit/UIKit.h>
-
+#import "ContactDao.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong) ContactDao *dao;
 
 
 @end

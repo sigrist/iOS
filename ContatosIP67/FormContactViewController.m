@@ -70,7 +70,7 @@
 // Save new Contacts
 -(void) saveContact {
     // Create the property contact
-    self.contact = [Contact new];
+    self.contact = [self.dao createNewContact];
     // get the form data and save it
     [self getFormData];
     // add the contact

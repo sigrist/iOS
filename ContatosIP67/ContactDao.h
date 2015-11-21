@@ -21,7 +21,7 @@
 -(Contact *) get:(NSInteger) index;
 -(void) remove:(NSInteger) index;
 -(NSInteger) searchContactPosition:(Contact *) contact;
-
+- (Contact *) createNewContact;
 
 // Core Data
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

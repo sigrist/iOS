@@ -15,9 +15,45 @@ static ContactDao *defaultDao = nil;
 +(ContactDao *)contactDaoInstance {
     if (!defaultDao) {
         defaultDao = [ContactDao new];
+        // Create the default contacts
+        [defaultDao createDefaultContacts];
+        [defaultDao loadContacts];
     }
     
     return defaultDao;
+}
+- (Contact *) createNewContact {
+    Contact *contact = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:self.managedObjectContext];
+    
+    return contact;
+}
+
+
+- (void) createDefaultContacts {
+    Contact *contact;
+    NSString *defaultKey = @"default_key";
+    NSUserDefaults *configs = [NSUserDefaults standardUserDefaults];
+    
+    if (![configs boolForKey:defaultKey]) {
+    
+        // Create contacts
+        contact = [self createNewContact];
+        
+        contact.name = @"Default 1";
+        contact.email = @"default1@defaul.com";
+        contact.address = @"Default Street, 1";
+        contact.site = @"http://www.default.com/1";
+        contact.phone = @"+55 19 987458669";
+        contact.latitude = [NSNumber numberWithDouble:-23.5883034];
+        contact.longitude = [NSNumber numberWithDouble:-46.632369];
+        
+        [self saveContext];
+        // Save the defaultKey to yes to tell the contacts is already there
+        [configs setBool:YES forKey:defaultKey];
+        // Save to file system
+        [configs synchronize];
+    }
+    
 }
 
 -(ContactDao *) init {
@@ -50,6 +86,16 @@ static ContactDao *defaultDao = nil;
     return [self.contacts indexOfObject:contact];
 }
 
+- (void) loadContacts {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Contact"];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    
+    request.sortDescriptors = @[sort];
+    
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    _contacts = [results mutableCopy];
+}
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;
